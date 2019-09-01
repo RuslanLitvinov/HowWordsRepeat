@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Ninject;
+using System.Windows;
 
 namespace HowWordsRepeat
 {
@@ -10,7 +11,8 @@ namespace HowWordsRepeat
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new ApplicationViewModel(new TextFileStrings(), new WordsCount());
+            NinjectContext.SetUp();
+            DataContext = NinjectContext.Kernel.Get<ApplicationViewModel>();
         }
     }
 }

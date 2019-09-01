@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HowWordsRepeat", "HowWordsRepeat.csproj", "{67495964-11BA-41B4-A0B5-7B1E8F914B42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repeat", "Repeat\Repeat.csproj", "{802D35AD-4773-4931-A2AF-FEB1ED8B737D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepeatTest", "Repeat\RepeatTest.csproj", "{802D35AD-4773-4931-A2AF-FEB1ED8B737D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

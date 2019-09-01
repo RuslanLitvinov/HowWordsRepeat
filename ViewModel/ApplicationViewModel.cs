@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace HowWordsRepeat
 {
@@ -13,18 +14,20 @@ namespace HowWordsRepeat
         private readonly IInputString inputString;
         private readonly IWordsFrequency wordsFrequency;
 
-        public ObservableCollection<Word> freqWords { get; set; }
+        public ObservableCollection<Word> FreqWords { get; set; }
 
 
         public ApplicationViewModel(IInputString inputString, IWordsFrequency wordsFrequency)
         {
             this.inputString = inputString;
             this.wordsFrequency = wordsFrequency;
+            FreqWords = new ObservableCollection<Word>();
         }
+
+        private RelayCommand readStringsGetFreqWords;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private RelayCommand readStringsGetFreqWords;
         public RelayCommand ReadStringsGetFreqWords
         {
             get
@@ -35,15 +38,18 @@ namespace HowWordsRepeat
                     {
                         // Получить отсортированную коллекцию частоты слов
                         List<string> inString = inputString.GetStrings();
+                        if (inString == null)
+                            return;          // !!!
+
                         var words = wordsFrequency.GetFrequencyWords(inString);
 
                         // Инициализировать коллекцию для view
-                        if (freqWords == null)
-                            freqWords = new ObservableCollection<Word>();
+                        if (FreqWords == null)
+                            FreqWords = new ObservableCollection<Word>();
 
-                        freqWords.Clear();
+                        FreqWords.Clear();
                         foreach (var w in words)
-                            freqWords.Add(w);
+                            FreqWords.Add(w);
                     }));
             }
         }

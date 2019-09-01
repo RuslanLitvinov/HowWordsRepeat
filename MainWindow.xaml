@@ -5,13 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HowWordsRepeat"
         mc:Ignorable="d"
-        Title="Определение частоты слов" Height="450" Width="500">
+        Title="Определение частоты слов (UTF-8)" Height="450" Width="500">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="14" />
         </Style>
     </Window.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="25" />
             <RowDefinition Height="*"/>
@@ -20,7 +23,7 @@
             <MenuItem Header="Прочитать строки и посчитать слова" Command="{Binding ReadStringsGetFreqWords}">
             </MenuItem>
         </Menu>
-        <ListBox Grid.Row="1" ItemsSource="{Binding freqWords}">
+        <ListBox Grid.Row="1" ItemsSource="{Binding FreqWords}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="5">

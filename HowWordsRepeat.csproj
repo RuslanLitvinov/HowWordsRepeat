@@ -56,6 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Services\RelayCommand.cs" />
+    <Compile Include="Services\TextFileStrings.cs" />
+    <Compile Include="Services\WordsCount.cs" />
     <Compile Include="ViewModel\ApplicationViewModel.cs" />
     <Compile Include="Services\IInputString.cs" />
     <Compile Include="Services\IWordsFrequency.cs" />

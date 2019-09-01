@@ -4,7 +4,7 @@ using System.Linq;
 using HowWordsRepeat;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Repeat
+namespace RepeatTest
 {
     [TestClass]
     public class UnitTestRepeat
